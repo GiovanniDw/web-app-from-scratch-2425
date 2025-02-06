@@ -13,14 +13,16 @@
 
     <div id="result">
       <template>
-
         {% for person in persons %}
+        <article class="person">
+          <div class="avatar">
+            <img src='{{person.avatar}}' alt=''>
+          </div>
 
-
-        <h3>{{ person.name }}</h3>
-
+          <h3>{{ person.name }}</h3>
+          <p>{{person.bio}}</p>
+        </article>
         {% endfor %}
-
       </template>
     </div>
 

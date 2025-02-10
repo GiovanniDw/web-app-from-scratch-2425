@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/main.css" />
+    <title>Giovanni - 237</title>
+  </head>
+  <body>
+    <div id="app">
+      <template>
+        <section>
+          {% for person in persons %}
+          <article class="person">
+            <div class="avatar">
+              <img src="{{person.avatar}}" alt="" />
+            </div>
+            <h3>{{ person.name }}</h3>
+            <p>{{person.bio}}</p>
+          </article>
+          {% endfor %}
+        </section>
+      </template>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
+    <script src="../src/main.js" type="module"></script>
+  </body>
+</html>

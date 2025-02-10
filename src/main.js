@@ -34,7 +34,7 @@ console.log(myData)
 // `
 
 const template = $('template')
-const result = $('#result')
+const app = $('#app')
 const engine = new liquidjs.Liquid()
 
 
@@ -56,7 +56,7 @@ let ctx = {
 
 engine.parseAndRender(template.innerHTML, ctx)
   .then(function(html) {
-    result.innerHTML = html
+    app.innerHTML = html
   });
 
 

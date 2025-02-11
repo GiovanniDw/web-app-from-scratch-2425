@@ -17,6 +17,15 @@
 }
 
 body {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+    margin: 0;
+    overflow: hidden;
+  
   font-family: 'Raleway', serif;
   font-optical-sizing: auto;
   font-weight: 300;
@@ -40,13 +49,28 @@ h6 {
   font-style: normal;
 }
 
+h4 {
+  font-size: 1em;
+}
+
 section {
   min-height: 100svh;
   padding: 1em;
+  width: 100%;
+}
+.section-learning {
+  min-height: 100svh;
+  background: blue;
+  border: red 1px solid;
+}
+.section-me {
+  /* min-height: 100svh; */
+  background: red;
+  border: blue 1px solid;
 }
 
-section.everyone div {
-  /* margin-top: 0.5em; */
+section.everyone div:first-of-type {
+  margin-top: 0.5em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-template-rows: masonry;
@@ -61,7 +85,8 @@ article.person {
   border-radius: 1.5em;
   padding: .5em;
   overflow: hidden;
-  background: #000;
+  background-color: light-dark(var(--c-dark),var(--c-white));
+  color: light-dark(var(--c-white),var(--c-dark));
 }
 
 section.everyone article.person div.avatar {

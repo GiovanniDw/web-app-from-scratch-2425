@@ -2,7 +2,10 @@
 //   cache: true
 // })
 
-import {getData} from './getData.js';
+import { getData, fixGroupData } from './data.js';
+
+const baseURL = 'https://fdnd.directus.app/items/person/';
+
 const dataURL = 'https://fdnd.directus.app/items/person/?filter={"id":237}';
 const groupURL = 'https://fdnd.directus.app/items/person/?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD%20Minor%20Web%20Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}';
 const filterUR = `https://fdnd.directus.app/items/person/?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD%20Minor%20Web%20Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}`;
@@ -17,6 +20,9 @@ const data = await response.json()
 
 
 const groupData = await getData(groupURL);
+
+const fixedGroupData = fixGroupData(groupData.data);
+
 
 const myData = data.data[0]
 
@@ -48,8 +54,8 @@ const engine = new liquidjs.Liquid()
 let src = "<h2>Welcome to {{ myData.name }}</h2>";
 
 let ctx = {
-  myData: myData,
-  persons: groupData.data,
+  personal: myData,
+  persons: fixedGroupData,
   name: 'Liquid',
   date: new Date()
 };

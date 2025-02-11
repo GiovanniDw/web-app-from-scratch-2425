@@ -9,15 +9,33 @@
   <body>
     <div id="app">
       <template>
+        <nav>
+          <a href='https://github.com/giovannidw'><img src='{{ personal.avatar }}' alt=''></a>
+          <a href='/workshop/'>Workshop</a>
+        </nav>
+        <section>
+          
+
+        </section>
+        <section class="everyone">
+          <h2>Who's at the Minor Web Dev?</h2>
+        <div>
         {% for person in persons %}
         <article class="person">
           <div class="avatar">
-            <img src='{{person.avatar}}' alt=''>
+            <img src='{{person.avatar}}' alt="{{person.name}}'s Avatar">
           </div>
-          <h3>{{ person.name }}</h3>
-          <p>{{person.bio}}</p>
+          <div class="content">
+            <h3>{{ person.name }}</h3>
+      
+            {% if person.bio %}
+              <p>{{person.bio}}</p>
+            {% endif %}
+          </div>
         </article>
         {% endfor %}
+        </div>
+      </section>
       </template>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/main.css" />
     <title>Giovanni - 237</title>
   </head>
+
   <body>
     <div id="app">
       <template>
@@ -14,31 +16,46 @@
           <a href='/workshop/'>Workshop</a>
         </nav>
         <section>
-          
+          <img src='{{personal.avatar}}' alt=''>
+          <h1>{{ personal.name }}</h1>
 
+
+          <!-- Je stelt jezelf voor (na het bezoeken van je website heeft de bezoeker een completer en beter beeld van je) -->
+          <!-- Minimaal drie diverse leerdoelen* (hoeft niet is tekst, liever niet zelf) -->
+          <!-- *Goed om persoonlijke leerdoelen op verschillende vlakken te kiezen: bijv. inhoud (code, schetsen, variëren, detailleren…), samenwerken, tooling, lef ... of andere competenties. -->
+        </section>
+        <section>
+          <h2>Leerdoelen</h2>
+          <ul>
+            <li>Scoll Driven Animation</li>
+            <li> </li>
+            <li></li>
+          </ul>
         </section>
         <section class="everyone">
-          <h2>Who's at the Minor Web Dev?</h2>
-        <div>
-        {% for person in persons %}
-        <article class="person">
-          <div class="avatar">
-            <img src='{{person.avatar}}' alt="{{person.name}}'s Avatar">
-          </div>
-          <div class="content">
-            <h3>{{ person.name }}</h3>
-      
-            {% if person.bio %}
+          <h3>Who's at the Minor Web Dev?</h3>
+          <div>
+            {% for person in persons %}
+            <article class="person">
+              <div class="avatar">
+                <img src='{{person.avatar}}' alt="{{person.name}}'s Avatar">
+              </div>
+              <div class="content">
+                <h4>{{ person.name }}</h4>
+                <!-- {% if person.bio == null %}
+              
+              {% else %}
               <p>{{person.bio}}</p>
-            {% endif %}
+            {% endif %} -->
+              </div>
+            </article>
+            {% endfor %}
           </div>
-        </article>
-        {% endfor %}
-        </div>
-      </section>
+        </section>
       </template>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
     <script src="./src/main.js" type="module"></script>
   </body>
+
 </html>

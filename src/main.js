@@ -1,8 +1,7 @@
-// const engine = new Liquid({
-//   cache: true
-// })
-
 import { getData, fixGroupData } from './data.js';
+
+const $ = (x) => document.querySelector(x)
+const $$ = (x) => document.querySelectorAll(x)
 
 const baseURL = 'https://fdnd.directus.app/items/person/';
 
@@ -11,25 +10,18 @@ const groupURL = 'https://fdnd.directus.app/items/person/?filter={"_and":[{"squa
 const filterUR = `https://fdnd.directus.app/items/person/?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD%20Minor%20Web%20Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}`;
 const filterBday = '&sort=-birthdate'
 
-
-
-console.log('load main.js')
-
-const response = await fetch(dataURL)
-const data = await response.json()
-
+// const response = await fetch(dataURL)
+// const data = await response.json()
 
 const groupData = await getData(groupURL);
 
 const fixedGroupData = fixGroupData(groupData.data);
 
+const myData = await getData(dataURL);
 
-const myData = data.data[0]
 
-const $ = (x) => document.querySelector(x)
-const $$ = (x) => document.querySelectorAll(x)
-
-console.log(myData)
+console.log('myData')
+console.log(myData.data[0])
 
 // $('#app').innerHTML = `
 //   <div>
@@ -44,7 +36,6 @@ const app = $('#app')
 const engine = new liquidjs.Liquid()
 
 
-
 // let Liquid = window.liquidjs.Liquid
 // let engine = new Liquid({
 //   extname: '.html',
@@ -54,7 +45,7 @@ const engine = new liquidjs.Liquid()
 let src = "<h2>Welcome to {{ myData.name }}</h2>";
 
 let ctx = {
-  personal: myData,
+  personal: myData.data[0],
   persons: fixedGroupData,
   name: 'Liquid',
   date: new Date()
@@ -64,5 +55,3 @@ engine.parseAndRender(template.innerHTML, ctx)
   .then(function(html) {
     app.innerHTML = html
   });
-
-

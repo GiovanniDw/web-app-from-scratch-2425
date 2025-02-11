@@ -10,11 +10,11 @@ export const fixGroupData = (data) => {
   const fixData = data;
 
   console.log('fixdata');
-  console.log(data);
+  // console.log(data);
 
   if (fixData) {
     fixData.forEach((obj) => {
-      console.log(obj.avatar);
+      // console.log(obj.avatar);
       if (!obj.avatar) {
         obj.avatar = emptyAvatarURL;
       }

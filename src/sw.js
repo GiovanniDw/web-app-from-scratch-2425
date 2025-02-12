@@ -5,7 +5,6 @@ const CORE_ASSETS = [
   "/src/main.css",
   "https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js",
   "/src/main.js",
-  "/Logo.png",
   "/manifest.json",
   `https://fdnd.directus.app/items/person/?filter={"id":237}`,
   `https://fdnd.directus.app/items/person/?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD%20Minor%20Web%20Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}`,

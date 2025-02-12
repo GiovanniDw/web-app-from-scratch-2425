@@ -5,11 +5,13 @@ const $$ = (x) => document.querySelectorAll(x)
 
 const baseURL = 'https://fdnd.directus.app/items/person/';
 const filterMe = '?filter={"id":237}'
-const filterGroup = '?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD%20Minor%20Web%20Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}'
-const dataURL = 'https://fdnd.directus.app/items/person/?filter={"id":237}';
-const groupURL = 'https://fdnd.directus.app/items/person/?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD%20Minor%20Web%20Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}';
-const filterUR = `https://fdnd.directus.app/items/person/?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD%20Minor%20Web%20Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}`;
+const filterGroup = '?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD Minor Web Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}'
+const dataMeURL = 'https://fdnd.directus.app/items/person/?filter={"id":237}';
+const dataGroupURL = `https://fdnd.directus.app/items/person/?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD Minor Web Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}`;
 const filterBday = '&sort=-birthdate'
+
+const customHairColor = 'https://fdnd.directus.app/items/person/?fields=*,squads.squad_id.name,squads.squad_id.cohort&filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD Minor Web Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}},{"custom":{"_contains":"haarkleur"}}]}';
+
 
 // const response = await fetch(dataURL)
 // const data = await response.json()

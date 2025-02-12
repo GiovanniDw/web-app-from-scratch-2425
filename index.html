@@ -3,30 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/main.css" />
+
     <link rel="manifest" href="manifest.json" />
+
     <link rel="icon" type="image/png" href="apple-touch-icon.png" />
-    <!-- <link rel="stylesheet" href="./src/loading.css" /> -->
-    <link rel="apple-touch-icon" sizes="1024x1024" href="./apple-touch-icon.png" />
-    <link rel="mask-icon" href="./logo-maskable.png" color="#fff" />
+    <link rel="apple-touch-icon" sizes="1024x1024" href="./public/apple-touch-icon.png" />
+    <link rel="mask-icon" href="./public/logo-maskable.png" color="#fff" />
+
+    <link rel="stylesheet" href="./src/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
-    <script src="./src/main.js" type="module" defer></script>
-    <!-- <script src="./src/loading.js" type="module"></script> -->
+    <script src="./src/js/main.js" type="module" defer></script>
 
     <title>Giovanni - 237</title>
   </head>
+
   <body>
     <div id="app">
       <template>
-        <nav>
+        <header>
           <a href='https://github.com/giovannidw'>
             <img src='{{ personal.avatar }}' alt=''>
           </a>
-          <a href='/workshop/'>Workshop</a>
-        </nav>
+          <div>
+            <h1>
+              {{personal.name}}
+            </h1>
+            <p>
+              {{personal.bio}}
+            </p>
+          </div>
+        </header>
         <section class="section-me">
-          <img src='{{personal.avatar}}' alt='{{personal.name}}'s Avatar'>
-          <h1>{{ personal.github_handle }}</h1>
+          <!-- <img src='{{personal.avatar}}' alt="{{personal.name}}'s Avatar">
+          <h1>{{ personal.github_handle }}</h1> -->
           <!-- Je stelt jezelf voor (na het bezoeken van je website heeft de bezoeker een completer en beter beeld van je) -->
           <!-- Minimaal drie diverse leerdoelen* (hoeft niet is tekst, liever niet zelf) -->
           <!-- *Goed om persoonlijke leerdoelen op verschillende vlakken te kiezen: bijv. inhoud (code, schetsen, variëren, detailleren…), samenwerken, tooling, lef ... of andere competenties. -->
@@ -56,17 +65,5 @@
         </section>
       </template>
     </div>
-    
-
-<script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener("load",
-        function () {
-          navigator.serviceWorker.register('./src/sw.js')
-            .then(function (registration) { return registration.update(); })
-        });
-    }
-  </script>
   </body>
-
 </html>

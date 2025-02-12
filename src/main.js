@@ -1,4 +1,4 @@
-import { getData, fixGroupData } from './data.js';
+import { getData, fixGroupData } from './js/data.js';
 
 const $ = (x) => document.querySelector(x)
 const $$ = (x) => document.querySelectorAll(x)

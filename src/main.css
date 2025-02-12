@@ -17,7 +17,7 @@ box-sizing: border-box;
   --c-blue: #1e90ff;
   --c-white: ##efefec;
 
-  --c-dark: #333b3c 
+  --c-dark: #333b3c ;
 }
 
 body {
@@ -28,7 +28,7 @@ body {
     /* height: 100vh;
     background: #f0f0f0;
     margin: 0;
-    overflow: hidden;    */ */
+    overflow: hidden;    */
   font-family: 'Raleway', serif;
   font-optical-sizing: auto;
   font-weight: 300;

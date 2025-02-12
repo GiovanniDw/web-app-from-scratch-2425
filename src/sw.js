@@ -3,6 +3,7 @@ const CORE_CACHE_VERSION = "MyFancyCacheName_v1";
 const CORE_ASSETS = [
   "/",
   "/src/main.css",
+  "https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js",
   "/src/main.js",
   "/Logo.png",
   "/manifest.json",

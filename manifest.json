@@ -3,6 +3,7 @@
   "short_name": "Giovanni",
   "theme_color": "#B3C1AC",
   "background_color": "#B3C1AC",
+  "start_url": "https://giovannidw.github.io/web-app-from-scratch-2425/",
   "icons": [
     {
       "purpose": "maskable",

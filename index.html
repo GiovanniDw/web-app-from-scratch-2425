@@ -7,6 +7,12 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" type="image/png" href="apple-touch-icon.png" />
     <!-- <link rel="stylesheet" href="./src/loading.css" /> -->
+    <link rel="apple-touch-icon" sizes="1024x1024" href="./apple-touch-icon.png" />
+    <link rel="mask-icon" href="./logo-maskable.png" color="#fff" />
+    <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
+    <script src="./src/main.js" type="module"></script>
+    <!-- <script src="./src/loading.js" type="module"></script> -->
+
     <title>Giovanni - 237</title>
   </head>
   <body>
@@ -19,8 +25,8 @@
           <a href='/workshop/'>Workshop</a>
         </nav>
         <section class="section-me">
-          <img src='{{personal.avatar}}' alt=''>
-          <h1>{{ personal.name }}</h1>
+          <img src='{{personal.avatar}}' alt='{{personal.name}}'s Avatar'>
+          <h1>{{ personal.github_handle }}</h1>
           <!-- Je stelt jezelf voor (na het bezoeken van je website heeft de bezoeker een completer en beter beeld van je) -->
           <!-- Minimaal drie diverse leerdoelen* (hoeft niet is tekst, liever niet zelf) -->
           <!-- *Goed om persoonlijke leerdoelen op verschillende vlakken te kiezen: bijv. inhoud (code, schetsen, variëren, detailleren…), samenwerken, tooling, lef ... of andere competenties. -->
@@ -50,9 +56,17 @@
         </section>
       </template>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
-    <script src="./src/main.js" type="module"></script>
-    <!-- <script src="./src/loading.js" type="module"></script> -->
+    
+
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener("load",
+        function () {
+          navigator.serviceWorker.register('./src/sw.js')
+            .then(function (registration) { return registration.update(); })
+        });
+    }
+  </script>
   </body>
 
 </html>

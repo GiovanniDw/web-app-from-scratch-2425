@@ -8,13 +8,13 @@
     {
       "purpose": "maskable",
       "sizes": "1024x1024",
-      "src": "logo_maskable.png",
+      "src": "logo-maskable.png",
       "type": "image/png"
     },
     {
       "purpose": "any",
       "sizes": "1024x1024",
-      "src": "apple_touch_icon.png",
+      "src": "apple-touch-icon.png",
       "type": "image/png"
     }
   ],

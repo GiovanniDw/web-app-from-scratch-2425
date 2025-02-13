@@ -57,8 +57,6 @@ html {
 }
 
 
-
-
 body {
   margin: 0;
   padding: 0;
@@ -98,164 +96,8 @@ h4 {
   inline-size: break-all;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 0.5em;
-  position: sticky;
-  top: 0;
-  width: min-content;
-  padding: 1em 2em 1em 1.5em;
-  margin-inline: auto;
-  /* padding: 1em; */
-  /* max-width: 100%; */
-  /* margin: 1em; */
-  overflow:visible;
-  font-weight: 700;
-  background: var(--c-primary);
-  /* https://scroll-driven-animations.style */
-
-  /* https://cydstumpel.nl/css-scroll-driven-animations-for-creative-developers/ */
-  animation-name: stickyHeader;
-  animation-fill-mode: forwards;
-  animation-timeline: scroll();
-  animation-range: 0 120vh;
-  /* transform:  */
-  transform: scale(3) translate(calc(2vw - 1em), calc(20vh - 1em));
-  border-radius: 0;
-  /* border: 1px solid gray; */
-}
-
-@keyframes stickyHeader {
-  20% {
-    border-radius: 0;
-    background-color: initial;
-  }
-  100% {
-    transform: scale(1);
-    background-color: var(--c-bg-glass);
-    border-radius: 25em;
-    /* color: var(--c-white); */
-    backdrop-filter: blur(10px);
-    /* font-weight: 800; */
-    font-size: 1em;
-    transform: scale(1) translate(0,1em);
-    /* margin: 1em; */
-  }
-}
-
-header a {
-  /* was header a { */
-  display: block;
-  width: 2.5em;
-  /* height: 2.5em; */
-  overflow: visible;
-  animation-name: scaleHeaderLogo;
-  animation-fill-mode: forwards;
-  animation-timeline: scroll();
-  animation-range: 0 100vh;
-  transform: scale(3);
-  /* transform: translate(calc(1vw - 2em), calc(20vh - 3em)); */
-}
-
-
-@keyframes scaleHeaderLogo {
-  100% {
-    transform: translate(0,0);
-    /* transform: translate(calc(50vw - 200px), calc(50vh - 160px)); */
-    
-  }
-}
-
-header > div {
-  /* max-width: 100%; */
-  display: inline;
-  font-weight: 200;
-  padding: 0;
-  margin: 0;
-  color: inherit;
-  /* font-size: 2.5em; */
-  /* transform: scale(1.5) translateX(5em) translateY(5em); */
-  /* transform: translate(calc(30vw - 5em), calc(50vh - 5em)); */
-  position: relative;
-  /* flex-grow: 2; */
-  animation-name: scaleHeaderText;
-  animation-fill-mode: forwards;
-  animation-timeline: scroll();
-  animation-range: 0 70vh;
-
-}
-
-header h1 {
-  font-weight: inherit;
-  margin-block: 0;
-}
-
-header h1 span {
-  /* font-size: 16px; */
-  font-weight: 800;
-  position: fixed;
-  /* top: 0; */
-  /* top: -1em; */
-  /* transform: scale(1) translateX(1em) translateY(-2em); */
-  transform: translate(0em,-2em);
-  /* font-size: 1em; */
-  /* min-width: 100svw; */
-  line-height: 1;
-  animation-name: scaleHeaderSub;
-  animation-fill-mode: forwards;
-  animation-timeline: scroll();
-  animation-range: 0 50vh;
-  width: 7ch;
-  
-}
-
-
-@keyframes scaleHeaderText {
-  20% {
-    font-weight: 700;
-    /* transform:  translate(calc(30vw - 5em), calc(50vh - 5em)); */
-  }
-  100% {
-    font-size: 1em;
-    /* transform: scale(1) translateX(0) translateY(0); */
-    font-weight: 700;
-  }
-}
-
-
-@keyframes scaleHeaderSub {
-  20% {
-    font-weight: 100;
-  }
-  100% {
-    font-size: 1.1em;
-    /* transform: scale(1) translateX(0) translateY(0); */
-    font-weight: 100;
-    opacity: 0;
-  }
-}
-
-header p {
-  padding: 0;
-  margin: 0;
-  font-weight: inherit;
-  color: inherit;
-}
-
-header div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-}
-
-
-
-
 
 section {
-  
   min-height: 100svh;
   padding: 1em;
   width: 100%;
@@ -267,10 +109,35 @@ background: var(--c-beige);
 
 .section-me {
   margin-top: 150vh;
+  text-align: center;
   min-height: 100svh;
   /* background: red; */
   /* border: blue 1px solid; */
 }
+
+ul.stack {
+  list-style: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  
+  li {
+    padding: .5em 1em;
+    /* border: 1px solid red; */
+    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5em;
+    text-transform:capitalize;
+    font-weight: 500;
+    color: light-dark(var(--c-dark), var(--c-white));
+  /* background-color: var(--c-bg-dark); */
+  background-color: light-dark(var(--c-white), var(--c-dark));
+  }   
+
+}
+
 
 
 .section-learning {

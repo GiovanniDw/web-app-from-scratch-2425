@@ -1,4 +1,4 @@
-import { getData, fixGroupData } from './js/data.js';
+import { getData, fixGroupData,fixCustomData } from './js/data.js';
 
 const $ = (x) => document.querySelector(x);
 const $$ = (x) => document.querySelectorAll(x);
@@ -21,13 +21,18 @@ const groupData = await getData(baseURL+filterGroup);
 
 const fixedGroupData = fixGroupData(groupData.data);
 
-const personalData = await getData(baseURL+filterMe);
 
+const personalData = await getData(baseURL+filterMe);
+const fixedPersonalData = fixCustomData(personalData.data);
 const template = $('template')
 const app = $('#app')
 const engine = new liquidjs.Liquid()
 
 let src = "<h2>Welcome to {{ myData.name }}</h2>";
+console.log('fixedPersonalData')
+console.log(fixedPersonalData)
+
+console.log(personalData.data[0])
 
 let ctx = {
   personal: personalData.data[0],
@@ -36,10 +41,12 @@ let ctx = {
   date: new Date()
 };
 
+
 engine.parseAndRender(template.innerHTML, ctx)
   .then(function(html) {
     app.innerHTML = html
   });
+
 
 
   // window.addEventListener('load', () => {
@@ -51,4 +58,5 @@ engine.parseAndRender(template.innerHTML, ctx)
 
       
   //   }, 2000); // Flip na 2 seconden
-  // });
+// });
+  

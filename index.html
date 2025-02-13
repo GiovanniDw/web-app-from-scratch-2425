@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="stylesheet" href="./src/css/header.css" />
     <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
     <script src="./src/main.js" type="module" defer></script>
 
@@ -44,6 +45,15 @@
             {{personal.bio}}
           </p>
         </div>
+        <article>
+          <h3>My Tech Stack</h3>
+          <ul class="stack">
+        {% for stack in personal.custom.tech_stack %}
+          <li><img height="24" width="24" src="https://cdn.simpleicons.org/{{stack}}/333c35/efefec" /> {{stack}}</li>
+        {% endfor %}
+      </ul>
+      </article>
+        
           <!-- <img src='{{personal.avatar}}' alt="{{personal.name}}'s Avatar">
           <h1>{{ personal.github_handle }}</h1> -->
           <!-- Je stelt jezelf voor (na het bezoeken van je website heeft de bezoeker een completer en beter beeld van je) -->
@@ -54,8 +64,8 @@
           <h2>Leerdoelen</h2>
           <ul>
             <li>Scoll Driven Animation</li>
-            <li> </li>
-            <li></li>
+            <li>Transform & Transition</li>
+            <li>scroll()</li>
           </ul>
         </section>
         <section class="everyone">

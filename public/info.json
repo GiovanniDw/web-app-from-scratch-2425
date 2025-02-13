@@ -1,13 +1,1 @@
-{
-  "_and": [
-    {
-      "squads": {
-        "squad_id": { "tribe": { "name": "CMD%20Minor%20Web%20Dev" } }
-      }
-    },
-    { "squads": { "squad_id": { "cohort": "2425" } } },
-    {"custom": {"_contains": "haarkleur" }}
-  ]
-}
-
-
+{"music_service":"https://music.apple.com/profile/giovannid_","tech_stack":["figma","sketch","notion","vscodium","arc","html5","css","javascript","github"]}

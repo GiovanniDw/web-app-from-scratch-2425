@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- <link rel="manifest" href="manifest.json" /> -->
+    <link rel="manifest" href="./public/manifest.json" />
 
     <!-- <link rel="icon" type="image/png" href="apple-touch-icon.png" /> -->
     <link rel="apple-touch-icon" sizes="1024x1024" href="./public/apple-touch-icon.png" />
@@ -14,12 +14,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <meta
+    name="theme-color"
+    content="#b3c1ac"
+    media="(prefers-color-scheme: light)" />
+  <meta
+    name="theme-color"
+    content="#333c35"
+    media="(prefers-color-scheme: dark)" />
+
     <link rel="stylesheet" href="./src/css/main.css" />
     <link rel="stylesheet" href="./src/css/header.css" />
     <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
     <script src="./src/main.js" type="module" defer></script>
 
-    <title>Giovanni - 237</title>
+    <title>Giovanni WAFS</title>
   </head>
 
   <body>
@@ -33,18 +42,15 @@
             <h1>
             <span>Hi, my Name is</span> {{personal.nickname}}
             </h1>
-            <!-- <p>
-              {{personal.bio}}
-            </p> -->
           </div>
         </header>
         <section class="section-me">
-          <div>
+          <article>
           <h2>Who Am I?</h2>
           <p>
             {{personal.bio}}
           </p>
-        </div>
+        </article>
         <article>
           <h3>My Tech Stack</h3>
           <ul class="stack">
@@ -53,19 +59,17 @@
         {% endfor %}
       </ul>
       </article>
-        
-          <!-- <img src='{{personal.avatar}}' alt="{{personal.name}}'s Avatar">
-          <h1>{{ personal.github_handle }}</h1> -->
-          <!-- Je stelt jezelf voor (na het bezoeken van je website heeft de bezoeker een completer en beter beeld van je) -->
-          <!-- Minimaal drie diverse leerdoelen* (hoeft niet is tekst, liever niet zelf) -->
-          <!-- *Goed om persoonlijke leerdoelen op verschillende vlakken te kiezen: bijv. inhoud (code, schetsen, variëren, detailleren…), samenwerken, tooling, lef ... of andere competenties. -->
+        <article>
+          <h3>My Playlist</h3>
+          <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/nl/playlist/housey/pl.u-76oN963FZDAoKg?l=en"></iframe>
+        </article>
         </section>
         <section class="section-learning">
           <h2>Leerdoelen</h2>
           <ul>
             <li>Scoll Driven Animation</li>
             <li>Transform & Transition</li>
-            <li>scroll()</li>
+            <li>CSS Only?</li>
           </ul>
         </section>
         <section class="everyone">
@@ -74,8 +78,7 @@
             {% for person in persons %}
             <article class="person">
               <div class="avatar">
-                <!-- <img src='{{person.avatar}}' alt="{{person.name}}'s Avatar"> -->
-                <img src='./src/assets/empty_avatar.png' alt="{{person.name}}'s Avatar">
+                <img src='{{person.avatar}}' alt="{{person.name}}'s Avatar">
               </div>
               <div class="content">
                 <h4>{{ person.name }}</h4>

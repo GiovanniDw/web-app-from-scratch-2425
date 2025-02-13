@@ -13,7 +13,6 @@ const filterGroup = '?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CM
 const dataMeURL = 'https://fdnd.directus.app/items/person/?filter={"id":237}';
 const dataGroupURL = `https://fdnd.directus.app/items/person/?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD Minor Web Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}`;
 const filterBday = '&sort=-birthdate'
-
 const customHairColor = 'https://fdnd.directus.app/items/person/?fields=*,squads.squad_id.name,squads.squad_id.cohort&filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD Minor Web Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}},{"custom":{"_contains":"haarkleur"}}]}';
 
 

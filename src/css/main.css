@@ -2,7 +2,7 @@
 
 html {
   box-sizing: border-box;
-  background: var(--c-primary);
+  background-color: light-dark(var(--c-primary), var(--c-dark));
 }
 *,
 *:before,
@@ -68,14 +68,15 @@ body {
   font-style: normal;
   font-size: 16px;
   color: light-dark(var(--c-dark), var(--c-white));
-  background-color: light-dark(var(--c-white), var(--c-dark));
+  background-color: light-dark(var(--c-primary), var(--c-dark));
+  /* background: var(--c-primary); */
 }
 
 #app {
   /* display: flex; */
   /* flex-direction: column; */
   /* align-items: flex-start; */
-  /* background: var(--c-primary); */
+  background-color: light-dark(var(--c-primary), var(--c-dark));
 }
 
 #app section:nth-child(even) {
@@ -125,27 +126,27 @@ ul.stack {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 0.5em;
+  justify-content: center;
 
   li {
     padding: 0.5em 1em;
     /* border: 1px solid red; */
     border-radius: 1em;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     align-items: center;
+    align-content: center;
     gap: 0.5em;
     text-transform: capitalize;
     font-weight: 500;
     color: light-dark(var(--c-dark), var(--c-white));
-    /* background-color: var(--c-bg-dark); */
     background-color: light-dark(var(--c-white), var(--c-dark));
   }
 }
 
 .section-learning {
-  min-height: 100svh;
-  /* background: blue; */
-  /* border: red 1px solid; */
+  min-height: 100svh; 
 }
 
 section.everyone > div {
@@ -167,16 +168,14 @@ article.person {
 
   color: light-dark(var(--c-green-700), var(--c-green-300));
   background-color: light-dark(var(--c-green-300), var(--c-green-700));
-  /* color: light-dark(var(--c-dark), var(--c-white));
-  /* background-color: var(--c-bg-dark); */
-  background-color: light-dark(var(--c-white), var(--c-dark)); */
+  /* alt bg color */
+  /* background-color: light-dark(var(--c-white), var(--c-dark)); */
 }
 
 section.everyone article.person div.avatar {
   display: flex;
   border-radius: 100%;
   overflow: hidden;
-  /* padding: 0.5em; */
   height: 2em;
   width: 2em;
   aspect-ratio: 1/1;
@@ -196,5 +195,4 @@ section.everyone article div.content h4 {
 
 img {
   max-width: 100%;
-  /* -height: 100%; */
 }

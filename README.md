@@ -36,3 +36,4 @@ data bday sort : `https://fdnd.directus.app/items/person/?filter={"_and":[{"squa
 
 * `https://cydstumpel.nl/css-scroll-driven-animations-for-creative-developers/`
 * `https://scroll-driven-animations.style`
+* icons: `https://github.com/simple-icons/simple-icons`

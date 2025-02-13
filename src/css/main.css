@@ -37,7 +37,7 @@ html {
   --c-green-900: #232622;
 
   --c-primary: #b3c1ac;
---c-secondary: #E4CFB3;
+--c-beige: #E4CFB3;
   --c-bg-light: var(--c-white);
   --c-text-light: var(--c-dark);
 
@@ -64,20 +64,20 @@ body {
   padding: 0;
   font-family: 'Raleway', serif;
   font-optical-sizing: auto;
-  max-width: 100svw;
+  /* max-width: 100svw; */
   overflow: visible;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
   color: light-dark(var(--c-dark), var(--c-white));
-  /* background-color: light-dark(var(--c-white),var(--c-dark)); */
-  
+  background-color: light-dark(var(--c-white),var(--c-dark));
 }
 
 #app {
   /* display: flex; */
   /* flex-direction: column; */
   /* align-items: flex-start; */
+  background: var(--c-primary);
 }
 
 h1,
@@ -101,12 +101,15 @@ h4 {
 header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   gap: 0.5em;
   position: sticky;
-  top: 1em;
+  top: 0;
+  width: min-content;
+  padding: 1em 2em 1em 1.5em;
+  margin-inline: auto;
   /* padding: 1em; */
-  max-width: 100%;
+  /* max-width: 100%; */
   /* margin: 1em; */
   overflow:visible;
   font-weight: 700;
@@ -117,19 +120,28 @@ header {
   animation-name: stickyHeader;
   animation-fill-mode: forwards;
   animation-timeline: scroll();
-  animation-range: 0 200vh;
+  animation-range: 0 120vh;
+  /* transform:  */
+  transform: scale(3) translate(calc(2vw - 1em), calc(20vh - 1em));
+  border-radius: 0;
+  /* border: 1px solid gray; */
 }
 
 @keyframes stickyHeader {
+  20% {
+    border-radius: 0;
+    background-color: initial;
+  }
   100% {
     transform: scale(1);
     background-color: var(--c-bg-glass);
     border-radius: 25em;
-    color: var(--c-white);
+    /* color: var(--c-white); */
     backdrop-filter: blur(10px);
     /* font-weight: 800; */
     font-size: 1em;
-    margin: 1em;
+    transform: scale(1) translate(0,1em);
+    /* margin: 1em; */
   }
 }
 
@@ -137,70 +149,77 @@ header a {
   /* was header a { */
   display: block;
   width: 2.5em;
-  height: 2.5em;
+  /* height: 2.5em; */
   overflow: visible;
   animation-name: scaleHeaderLogo;
   animation-fill-mode: forwards;
   animation-timeline: scroll();
   animation-range: 0 100vh;
-  transform: scale(3) translateX(5vw) translateY(5vw);
+  transform: scale(3);
+  /* transform: translate(calc(1vw - 2em), calc(20vh - 3em)); */
 }
 
 
 @keyframes scaleHeaderLogo {
   100% {
-    transform: scale(1);
+    transform: translate(0,0);
+    /* transform: translate(calc(50vw - 200px), calc(50vh - 160px)); */
     
   }
 }
 
-header h1 {
+header > div {
   /* max-width: 100%; */
   display: inline;
   font-weight: 200;
   padding: 0;
   margin: 0;
   color: inherit;
-  font-size: 2.5em;
-  transform: scale(1.5) translateX(5em) translateY(5em);
-  /* position: relative; */
+  /* font-size: 2.5em; */
+  /* transform: scale(1.5) translateX(5em) translateY(5em); */
+  /* transform: translate(calc(30vw - 5em), calc(50vh - 5em)); */
+  position: relative;
   /* flex-grow: 2; */
   animation-name: scaleHeaderText;
   animation-fill-mode: forwards;
   animation-timeline: scroll();
-  animation-range: 0 100vh;
+  animation-range: 0 70vh;
 
+}
+
+header h1 {
+  font-weight: inherit;
+  margin-block: 0;
 }
 
 header h1 span {
   /* font-size: 16px; */
   font-weight: 800;
-  position: absolute;
+  position: fixed;
+  /* top: 0; */
   /* top: -1em; */
-  transform: scale(1) translateX(1em) translateY(-2em);
+  /* transform: scale(1) translateX(1em) translateY(-2em); */
+  transform: translate(0em,-2em);
   /* font-size: 1em; */
   /* min-width: 100svw; */
   line-height: 1;
   animation-name: scaleHeaderSub;
   animation-fill-mode: forwards;
   animation-timeline: scroll();
-  animation-range: 0 100vh;
-  width: 120%;
+  animation-range: 0 50vh;
+  width: 7ch;
+  
 }
 
 
 @keyframes scaleHeaderText {
   20% {
     font-weight: 700;
-  }
-  90% {
-    font-size: 1.1em;
-    transform: scale(1.5) translateX(3em) translateY(5em);
-    font-weight: 700;
+    /* transform:  translate(calc(30vw - 5em), calc(50vh - 5em)); */
   }
   100% {
-    font-size: 1.1em;
-    transform: scale(1) translateX(0) translateY(0);
+    font-size: 1em;
+    /* transform: scale(1) translateX(0) translateY(0); */
     font-weight: 700;
   }
 }
@@ -210,13 +229,9 @@ header h1 span {
   20% {
     font-weight: 100;
   }
-  90% {
-    transform: scale(1) translateX(1em) translateY(-2em);
-  }
-
   100% {
     font-size: 1.1em;
-    transform: scale(1) translateX(0) translateY(0);
+    /* transform: scale(1) translateX(0) translateY(0); */
     font-weight: 100;
     opacity: 0;
   }
@@ -231,7 +246,7 @@ header p {
 
 header div {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   gap: 0.5em;
 }
 
@@ -244,6 +259,10 @@ section {
   min-height: 100svh;
   padding: 1em;
   width: 100%;
+}
+
+#app section:nth-child(even) {
+background: var(--c-beige);
 }
 
 .section-me {

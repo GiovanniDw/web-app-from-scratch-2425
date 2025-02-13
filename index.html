@@ -38,11 +38,12 @@
           </div>
         </header>
         <section class="section-me">
-
+          <div>
           <h2>Who Am I?</h2>
           <p>
             {{personal.bio}}
           </p>
+        </div>
           <!-- <img src='{{personal.avatar}}' alt="{{personal.name}}'s Avatar">
           <h1>{{ personal.github_handle }}</h1> -->
           <!-- Je stelt jezelf voor (na het bezoeken van je website heeft de bezoeker een completer en beter beeld van je) -->
@@ -63,7 +64,8 @@
             {% for person in persons %}
             <article class="person">
               <div class="avatar">
-                <img src='{{person.avatar}}' alt="{{person.name}}'s Avatar">
+                <!-- <img src='{{person.avatar}}' alt="{{person.name}}'s Avatar"> -->
+                <img src='./src/assets/empty_avatar.png' alt="{{person.name}}'s Avatar">
               </div>
               <div class="content">
                 <h4>{{ person.name }}</h4>

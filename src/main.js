@@ -3,6 +3,10 @@ import { getData, fixGroupData } from './js/data.js';
 const $ = (x) => document.querySelector(x);
 const $$ = (x) => document.querySelectorAll(x);
 
+
+
+// https://directus.io/docs/guides/connect/query-parameters 
+
 const baseURL = 'https://fdnd.directus.app/items/person/';
 const filterMe = '?filter={"id":237}'
 const filterGroup = '?filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"CMD Minor Web Dev"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}'

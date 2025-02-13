@@ -10,6 +10,10 @@
     <link rel="apple-touch-icon" sizes="1024x1024" href="./public/apple-touch-icon.png" />
     <link rel="mask-icon" href="./public/logo-maskable.png" color="#fff" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./src/css/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
     <script src="./src/main.js" type="module" defer></script>
@@ -26,16 +30,19 @@
           </a>
           <div>
             <h1>
-            <span>Hi, my Name is <br/></span> {{personal.nickname}}
+            <span>Hi, my Name is</span> {{personal.nickname}}
             </h1>
-            <p>
+            <!-- <p>
               {{personal.bio}}
-            </p>
+            </p> -->
           </div>
         </header>
         <section class="section-me">
 
           <h2>Who Am I?</h2>
+          <p>
+            {{personal.bio}}
+          </p>
           <!-- <img src='{{personal.avatar}}' alt="{{personal.name}}'s Avatar">
           <h1>{{ personal.github_handle }}</h1> -->
           <!-- Je stelt jezelf voor (na het bezoeken van je website heeft de bezoeker een completer en beter beeld van je) -->

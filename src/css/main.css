@@ -4,7 +4,9 @@ html {
   box-sizing: border-box;
   background: var(--c-primary);
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -19,35 +21,56 @@ html {
   color-scheme: light dark;
 
   --c-blue: #1e90ff;
-  --c-white: ##efefec;
+  --c-white: #efefec;
 
-  --c-dark: #333b3c ;
-  --c-primary: #B3C1AC;
+  --c-dark: #333c35;
+  --c-gray: #b7b7b7;
+  --c-green-50: #fbfbfa;
+  --c-green-100: #ecf0eb;
+  --c-green-200: #dee4db;
+  --c-green-300: #cfd8cb;
+  --c-green-400: #c1ccbb;
+  --c-green-500: #b3c1ac;
+  --c-green-600: #8f9a89;
+  --c-green-700: #6b7367;
+  --c-green-800: #474d44;
+  --c-green-900: #232622;
 
+  --c-primary: #b3c1ac;
+--c-secondary: #E4CFB3;
   --c-bg-light: var(--c-white);
   --c-text-light: var(--c-dark);
 
   --c-bg-dark: var(--c-dark);
   --c-text-dark: var(--c-white);
 
-  --c-bg-glass: #80808030;
+  --c-bg-glass: rgba(128, 128, 128, 0.3);
 
-
-
+  --c-border: linear-gradient(
+    157deg,
+    rgba(255, 255, 255, 0.4) 2.12%,
+    rgba(255, 255, 255, 0) 39%,
+    rgba(255, 255, 255, 0) 54.33%,
+    rgba(255, 255, 255, 0.1) 93.02%
+  );
+  --c-border-fallback: rgba(255, 255, 255, 0.4);
 }
+
+
+
 
 body {
   margin: 0;
   padding: 0;
-
   font-family: 'Raleway', serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  max-width: 100svw;
+  overflow: visible;
+  font-weight: 400;
   font-style: normal;
   font-size: 16px;
-
-  color: light-dark(var(--c-dark),var(--c-white));
-  background-color: light-dark(var(--c-white),var(--c-dark));
+  color: light-dark(var(--c-dark), var(--c-white));
+  /* background-color: light-dark(var(--c-white),var(--c-dark)); */
   
 }
 
@@ -78,56 +101,126 @@ h4 {
 header {
   display: flex;
   align-items: center;
-  gap: .5em;  
-
+  justify-content: flex-start;
+  gap: 0.5em;
   position: sticky;
   top: 1em;
-
-  padding: 1em;
+  /* padding: 1em; */
   max-width: 100%;
-  margin: 1em;
-
+  /* margin: 1em; */
+  overflow:visible;
   font-weight: 700;
   background: var(--c-primary);
-  
-  
+  /* https://scroll-driven-animations.style */
 
-/* https://scroll-driven-animations.style */
-
-/* https://cydstumpel.nl/css-scroll-driven-animations-for-creative-developers/ */
-
+  /* https://cydstumpel.nl/css-scroll-driven-animations-for-creative-developers/ */
   animation-name: stickyHeader;
   animation-fill-mode: forwards;
   animation-timeline: scroll();
-  animation-range: 0 20vh;
+  animation-range: 0 200vh;
 }
 
-header img {
+@keyframes stickyHeader {
+  100% {
+    transform: scale(1);
+    background-color: var(--c-bg-glass);
+    border-radius: 25em;
+    color: var(--c-white);
+    backdrop-filter: blur(10px);
+    /* font-weight: 800; */
+    font-size: 1em;
+    margin: 1em;
+  }
+}
+
+header a {
   /* was header a { */
   display: block;
-  width: 15em;
-  height: 15em;
-  overflow: hidden;
-
+  width: 2.5em;
+  height: 2.5em;
+  overflow: visible;
   animation-name: scaleHeaderLogo;
   animation-fill-mode: forwards;
   animation-timeline: scroll();
-  animation-range: 0 20vh;
+  animation-range: 0 100vh;
+  transform: scale(3) translateX(5vw) translateY(5vw);
+}
+
+
+@keyframes scaleHeaderLogo {
+  100% {
+    transform: scale(1);
+    
+  }
 }
 
 header h1 {
- font-weight: inherit;
- padding: 0;
+  /* max-width: 100%; */
+  display: inline;
+  font-weight: 200;
+  padding: 0;
   margin: 0;
   color: inherit;
-  font-size: 5em;
+  font-size: 2.5em;
+  transform: scale(1.5) translateX(5em) translateY(5em);
+  /* position: relative; */
+  /* flex-grow: 2; */
+  animation-name: scaleHeaderText;
+  animation-fill-mode: forwards;
+  animation-timeline: scroll();
+  animation-range: 0 100vh;
+
 }
 
 header h1 span {
-  font-size: 16px;
-  font-weight: 300;
+  /* font-size: 16px; */
+  font-weight: 800;
+  position: absolute;
+  /* top: -1em; */
+  transform: scale(1) translateX(1em) translateY(-2em);
+  /* font-size: 1em; */
+  /* min-width: 100svw; */
+  line-height: 1;
+  animation-name: scaleHeaderSub;
+  animation-fill-mode: forwards;
+  animation-timeline: scroll();
+  animation-range: 0 100vh;
+  width: 120%;
 }
 
+
+@keyframes scaleHeaderText {
+  20% {
+    font-weight: 700;
+  }
+  90% {
+    font-size: 1.1em;
+    transform: scale(1.5) translateX(3em) translateY(5em);
+    font-weight: 700;
+  }
+  100% {
+    font-size: 1.1em;
+    transform: scale(1) translateX(0) translateY(0);
+    font-weight: 700;
+  }
+}
+
+
+@keyframes scaleHeaderSub {
+  20% {
+    font-weight: 100;
+  }
+  90% {
+    transform: scale(1) translateX(1em) translateY(-2em);
+  }
+
+  100% {
+    font-size: 1.1em;
+    transform: scale(1) translateX(0) translateY(0);
+    font-weight: 100;
+    opacity: 0;
+  }
+}
 
 header p {
   padding: 0;
@@ -138,44 +231,35 @@ header p {
 
 header div {
   display: flex;
-  flex-direction: column;
-  gap: .5em;
+  /* flex-direction: column; */
+  gap: 0.5em;
 }
 
-@keyframes stickyHeader {
-  100% {
-    /* transform: scale(0.75); */
-   background-color: var(--c-bg-glass);
-   border-radius: 25em;
-   color: var(--c-white);
-   backdrop-filter: blur(10px);
-   font-weight: 800;
-   font-size: 1em;
-  }
-}
 
-@keyframes scaleHeaderLogo {
-  100% {
-    transform: scale(0.5);
-  }
-}
+
 
 
 section {
+  
   min-height: 100svh;
   padding: 1em;
   width: 100%;
 }
+
+.section-me {
+  margin-top: 150vh;
+  min-height: 100svh;
+  /* background: red; */
+  /* border: blue 1px solid; */
+}
+
+
 .section-learning {
   min-height: 100svh;
   /* background: blue; */
   /* border: red 1px solid; */
 }
-.section-me {
-  min-height: 100svh;
-  /* background: red; */
-  /* border: blue 1px solid; */
-}
+
 
 section.everyone > div {
   margin-top: 0.5em;
@@ -191,11 +275,11 @@ article.person {
   justify-items: baseline;
   border: 1px solid gray;
   border-radius: 1.5em;
-  padding: .5em;
+  padding: 0.5em;
   overflow: hidden;
-  background-color: light-dark(var(--c-dark),var(--c-white));
+  background-color: light-dark(var(--c-dark), var(--c-white));
   /* background-color: var(--c-bg-dark); */
-  color: light-dark(var(--c-white),var(--c-dark));
+  color: light-dark(var(--c-white), var(--c-dark));
 }
 
 section.everyone article.person div.avatar {
@@ -223,5 +307,4 @@ section.everyone article div.content h4 {
 img {
   max-width: 100%;
   /* -height: 100%; */
-
 }

@@ -75,7 +75,17 @@ body {
   /* display: flex; */
   /* flex-direction: column; */
   /* align-items: flex-start; */
-  background: var(--c-primary);
+  /* background: var(--c-primary); */
+}
+
+#app section:nth-child(even) {
+  color: light-dark(var(--c-green-900), var(--c-green-200));
+  background-color: light-dark(var(--c-green-200), var(--c-green-900));
+}
+
+#app section:nth-child(odd) {
+  color: light-dark(var(--c-beige-dark), var(--c-beige));
+  background-color: light-dark(var(--c-beige), var(--c-beige-dark));
 }
 
 h1,
@@ -100,16 +110,6 @@ section {
   min-height: 100svh;
   padding: 1em;
   width: 100%;
-}
-
-#app section:nth-child(even) {
-  color: light-dark(var(--c-green-900), var(--c-green-200));
-  background-color: light-dark(var(--c-green-200), var(--c-green-900));
-}
-
-#app section:nth-child(odd) {
-  color: light-dark(var(--c-beige-dark), var(--c-beige));
-  background-color: light-dark(var(--c-beige), var(--c-beige-dark));
 }
 
 .section-me {
@@ -164,9 +164,12 @@ article.person {
   border-radius: 1.5em;
   padding: 0.5em;
   overflow: hidden;
-  background-color: light-dark(var(--c-dark), var(--c-white));
+
+  color: light-dark(var(--c-green-700), var(--c-green-300));
+  background-color: light-dark(var(--c-green-300), var(--c-green-700));
+  /* color: light-dark(var(--c-dark), var(--c-white));
   /* background-color: var(--c-bg-dark); */
-  color: light-dark(var(--c-white), var(--c-dark));
+  background-color: light-dark(var(--c-white), var(--c-dark)); */
 }
 
 section.everyone article.person div.avatar {
